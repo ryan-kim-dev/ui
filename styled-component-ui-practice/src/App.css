@@ -19,6 +19,7 @@
 }
 
 .sub_title {
+  position: absolute;
   font-size: 1rem;
   font-family: 'Raleway', sans-serif;
   margin: 5px 0px 0px 5px;
