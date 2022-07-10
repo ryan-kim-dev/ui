@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -19,6 +19,10 @@ const StyledUl = styled.ul`
 
   /* list 기본 스타일 제거 */
   list-style: none;
+
+  > .checked {
+    border: 2px solid skyblue;
+  }
 `;
 
 const StyledLi = styled.li`
@@ -36,30 +40,30 @@ const StyledLi = styled.li`
 
 const Nav = () => {
   const menuArr = ['login', 'Music', 'Movie'];
+  const [checked, setChecked] = useState();
 
-  //   <StyledLi>
-  //   <Link to="/">홈</Link>
-  // </StyledLi>
-  // <StyledLi>
-  //   <Link to="/login">로그인</Link>
-  // </StyledLi>
-  // <StyledLi>
-  //   <Link to="/music">Music</Link>
-  // </StyledLi>
-  // <StyledLi>
-  //   <Link to="/movie">Movie</Link>
-  // </StyledLi>
+  const handleChecked = idx => {
+    setChecked(idx);
+  };
+
   return (
     <>
       <StyledNav>
         <StyledUl>
-          <StyledLi>
+          <StyledLi
+            onClick={() => handleChecked(101)}
+            className={checked === 101 ? 'checked' : 'notChecked'}
+          >
             <Link to="/" className="list-item">
               Home
             </Link>
           </StyledLi>
-          {menuArr.map(el => (
-            <StyledLi>
+          {menuArr.map((el, idx) => (
+            <StyledLi
+              key={idx}
+              onClick={() => handleChecked(idx)}
+              className={idx === checked ? 'checked' : 'notChecked'}
+            >
               <Link to={`/${el}`} className="list-item">
                 {el}
               </Link>
