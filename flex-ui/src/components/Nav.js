@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const StyledNav = styled.nav`
   width: 100%;
   height: 55px;
-  background-color: #ecf0f1;
+  background-color: #eeeeee;
 `;
 
 const StyledUl = styled.ul`
@@ -21,12 +21,12 @@ const StyledUl = styled.ul`
   list-style: none;
 
   > .checked {
-    border: 2px solid skyblue;
+    border: 2px solid #00adb5;
   }
 `;
 
 const StyledLi = styled.li`
-  background-color: #3498db;
+  background-color: #393e46;
   padding: 0.3em 0.5em;
   border-radius: 7px;
   flex-basis: 100px;
@@ -39,7 +39,7 @@ const StyledLi = styled.li`
 `;
 
 const Nav = () => {
-  const menuArr = ['login', 'Music', 'Movie'];
+  const menuArr = ['Login', 'Music', 'Movie'];
   const [checked, setChecked] = useState();
 
   const handleChecked = idx => {
