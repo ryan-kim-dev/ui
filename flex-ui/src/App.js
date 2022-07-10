@@ -6,9 +6,11 @@ import Movie from './pages/Movie';
 import Music from './pages/Music';
 import Home from './pages/Home';
 import { Route, Routes } from 'react-router-dom';
+import GlobalStyle from './components/GlobalStyle';
 const App = () => {
   return (
     <>
+      <GlobalStyle />
       <Header />
       <Nav />
       <Routes>
